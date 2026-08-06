@@ -73,7 +73,7 @@
   </div>
   <!-- stats bar -->
   <div class="stats-bar">
-    <div class="stat-item"><span class="s-num">6+</span><span class="s-lbl">Projects</span></div>
+    <div class="stat-item"><span class="s-num">8+</span><span class="s-lbl">Projects</span></div>
     <div class="s-div"></div>
     <div class="stat-item"><span class="s-num">1+</span><span class="s-lbl">Internship</span></div>
     <div class="s-div"></div>
@@ -271,8 +271,8 @@
           <div class="p-ico"><i class="fas fa-chart-line"></i></div>
         </div>
         <h3>Stock Market Prediction</h3>
-        <p>Random Forest forecasting closing prices for MSFT, AAPL, IBM, S&P 500 using historical OHLV data. Flask REST API + interactive web UI.</p>
-        <div class="p-tags"><span>Random Forest</span><span>Flask</span><span>Jupyter</span></div>
+        <p>Built an end-to-end stock price forecasting system using a Random Forest Regressor trained on historical OHLCV (Open, High, Low, Close, Volume) data for MSFT, AAPL, IBM, and the S&P 500 index. The pipeline performs feature engineering by computing rolling averages, lag features, and percentage change indicators to capture temporal patterns. StandardScaler normalisation is applied before training to ensure feature parity. Hyperparameter tuning via GridSearchCV optimises n_estimators, max_depth, and min_samples_split. The trained model is serialised with Pickle and served through a Flask REST API that accepts ticker input and returns predicted closing prices. An interactive web UI visualises historical vs predicted trends using Matplotlib-generated charts embedded in the response, making the system production-ready and user-accessible.</p>
+        <div class="p-tags"><span>Python</span><span>Random Forest</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Flask</span><span>REST API</span><span>Jupyter Notebook</span><span>HTML/CSS/JS</span></div>
         <a href="https://github.com/venkateshmallarapu2-dot/Stack-Market-Prediction" target="_blank" rel="noopener" class="p-link"><i class="fab fa-github"></i> View on GitHub <span>→</span></a>
       </div>
 
@@ -282,8 +282,8 @@
           <div class="p-ico"><i class="fab fa-instagram"></i></div>
         </div>
         <h3>Instagram Usage Predictor</h3>
-        <p>Predicts daily usage from 9 behavioural features on 10,000 records. R² = 0.86. Login-secured Flask dashboard with REST API.</p>
-        <div class="p-tags"><span>Random Forest</span><span>Flask</span><span>Bootstrap</span></div>
+        <p>Developed a regression-based behavioural analytics system that predicts a user's daily Instagram usage time in minutes using 9 engineered features — including daily logins, posts liked, stories viewed, DMs sent, reels watched, notifications received, age, and follower count. The dataset of 10,000 synthetic user records was processed through an EDA pipeline using Pandas and Seaborn to identify correlations and outliers before training. A Random Forest Regressor was selected after benchmarking against Linear Regression, Decision Tree, and Gradient Boosting — achieving R² = 0.86 and MAE ≈ 17 minutes on the held-out test set. The model is served via a login-secured Flask dashboard with session management, allowing users to input feature values and receive real-time usage predictions through a Bootstrap-styled responsive UI backed by a REST API endpoint.</p>
+        <div class="p-tags"><span>Python</span><span>Random Forest</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Seaborn</span><span>Matplotlib</span><span>Flask</span><span>Bootstrap</span><span>REST API</span><span>Jupyter Notebook</span></div>
         <a href="https://github.com/venkateshmallarapu2-dot/Instagram-usage-Data-Prediction" target="_blank" rel="noopener" class="p-link"><i class="fab fa-github"></i> View on GitHub <span>→</span></a>
       </div>
 
@@ -293,8 +293,8 @@
           <div class="p-ico"><i class="fas fa-pencil-alt"></i></div>
         </div>
         <h3>Handwritten Character Recognition</h3>
-        <p>CNN on EMNIST (814k samples). 62 character classes. ~92% accuracy, &lt;100ms inference. HTML5 Canvas frontend + Flask API backend.</p>
-        <div class="p-tags"><span>CNN</span><span>TensorFlow</span><span>Flask</span></div>
+        <p>Designed and trained a deep Convolutional Neural Network on the EMNIST Balanced dataset comprising 814,255 labelled images across 62 character classes (digits 0–9, uppercase A–Z, lowercase a–z). The CNN architecture consists of multiple Conv2D layers with ReLU activations, MaxPooling for spatial downsampling, Batch Normalisation for training stability, Dropout (0.4) for regularisation, and Dense layers with Softmax output. Data augmentation — rotation, zoom, and width/height shifts — was applied via Keras ImageDataGenerator to improve generalisation. The model achieves ~92% top-1 accuracy on the test split with sub-100ms inference latency. OpenCV preprocesses the canvas input by applying grayscale conversion, Gaussian blur, adaptive thresholding, and contour-based bounding-box extraction before feeding into the model. The backend Flask API receives base64-encoded canvas frames, runs inference, and returns the predicted character and confidence score to the HTML5 Canvas frontend in real time.</p>
+        <div class="p-tags"><span>Python</span><span>CNN</span><span>TensorFlow</span><span>Keras</span><span>OpenCV</span><span>EMNIST Dataset</span><span>NumPy</span><span>Scikit-learn</span><span>Flask</span><span>HTML5 Canvas</span><span>JavaScript</span></div>
         <a href="https://github.com/venkateshmallarapu2-dot/hand-written-characteristics-recognition-" target="_blank" rel="noopener" class="p-link"><i class="fab fa-github"></i> View on GitHub <span>→</span></a>
       </div>
 
@@ -304,8 +304,8 @@
           <div class="p-ico"><i class="fas fa-user-graduate"></i></div>
         </div>
         <h3>Smart Career Counsellor</h3>
-        <p>Recommends career paths by mapping 5 skill scores via Random Forest on 50,000 profiles. 85–95% accuracy. Flask web app with REST API.</p>
-        <div class="p-tags"><span>Random Forest</span><span>Flask</span><span>Python</span></div>
+        <p>Built an ML-powered career recommendation engine trained on 50,000 synthetic student profiles, each characterised by five normalised skill scores — Math, Programming, Creativity, Communication, and Science. The target variable spans 10 career categories including Software Engineer, Data Scientist, Doctor, Artist, and Lawyer. After extensive EDA using Seaborn heatmaps and pairplots to uncover inter-feature correlations, a Random Forest Classifier was selected via cross-validated comparison against KNN, Logistic Regression, and SVM. The model achieves 85–95% accuracy depending on career class and uses feature_importances_ to surface the top skills driving each prediction. The Flask web application exposes a REST API endpoint that accepts skill input via a dynamic form, processes it through the Pickle-serialised model, and returns a ranked list of suitable careers with confidence percentages rendered on a responsive HTML/CSS/JS dashboard.</p>
+        <div class="p-tags"><span>Python</span><span>Random Forest</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Flask</span><span>REST API</span><span>HTML/CSS/JS</span><span>Jupyter Notebook</span></div>
         <a href="https://github.com/venkateshmallarapu2-dot/smart-carrer-consular-machine-learning-based-recommendation" target="_blank" rel="noopener" class="p-link"><i class="fab fa-github"></i> View on GitHub <span>→</span></a>
       </div>
 
@@ -315,8 +315,8 @@
           <div class="p-ico"><i class="fas fa-water"></i></div>
         </div>
         <h3>Floods & Landslides Prediction</h3>
-        <p>SVM predicts flood risk from rainfall, river level, soil moisture and slope. 20k records. Auth, history, visual charts and safety tips.</p>
-        <div class="p-tags"><span>SVM</span><span>Flask</span><span>Scikit-learn</span></div>
+        <p>Engineered a geospatial disaster risk prediction system using a Support Vector Machine with an RBF kernel, trained on 20,000 environmental records spanning four critical features: rainfall (mm), river water level (m), soil moisture (%), and terrain slope (degrees). Data preprocessing includes MinMaxScaler normalisation, SMOTE oversampling to handle class imbalance between risk levels (Low / Medium / High), and cross-validated C and gamma hyperparameter tuning via GridSearchCV. The SVM model outputs a multi-class flood risk label with a probability estimate using Platt scaling. The Flask backend stores prediction history per authenticated user in a session-backed database, while the frontend renders risk distribution with Chart.js doughnut charts and overlays contextual safety tips per risk tier. The full-stack application is structured with Jinja2 templating, Bootstrap grid layout, and RESTful route separation for modularity.</p>
+        <div class="p-tags"><span>Python</span><span>SVM</span><span>Scikit-learn</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Seaborn</span><span>Flask</span><span>Chart.js</span><span>Bootstrap</span><span>Jupyter Notebook</span></div>
         <a href="https://github.com/venkateshmallarapu2-dot/floods-and-landslides-prediction-using-machine-learning" target="_blank" rel="noopener" class="p-link"><i class="fab fa-github"></i> View on GitHub <span>→</span></a>
       </div>
 
@@ -326,9 +326,31 @@
           <div class="p-ico"><i class="fas fa-shield-alt"></i></div>
         </div>
         <h3>Credit Card Fraud Detection</h3>
-        <p>Real-time fraud classification using Random Forest + StandardScaler. Full-stack Flask + JavaScript frontend with live alerts.</p>
-        <div class="p-tags"><span>Random Forest</span><span>Flask</span><span>JavaScript</span></div>
+        <p>Developed a real-time financial fraud classification system addressing the highly imbalanced nature of fraud datasets — where fraudulent transactions represent less than 0.2% of records. The pipeline applies StandardScaler to normalise the PCA-transformed features (V1–V28) and SMOTE (Synthetic Minority Oversampling Technique) to synthetically balance the training distribution before model fitting. A Random Forest Classifier with 200 estimators was selected after benchmarking Logistic Regression, XGBoost, and Isolation Forest, achieving high Precision, Recall, and F1-Score on the minority fraud class — metrics deliberately prioritised over raw accuracy to minimise false negatives. The Pickle-serialised model is served via a Flask REST API that processes incoming transaction JSON payloads, runs synchronous inference, and returns a fraud/legit label with confidence score. The JavaScript frontend renders live transaction results with colour-coded alerts and a running fraud rate counter, simulating a real-time fraud monitoring dashboard.</p>
+        <div class="p-tags"><span>Python</span><span>Random Forest</span><span>Scikit-learn</span><span>StandardScaler</span><span>SMOTE</span><span>Pandas</span><span>NumPy</span><span>Matplotlib</span><span>Flask</span><span>JavaScript</span><span>HTML/CSS</span></div>
         <a href="https://github.com/venkateshmallarapu2-dot/credit-card-fraud-detection-using-ml" target="_blank" rel="noopener" class="p-link"><i class="fab fa-github"></i> View on GitHub <span>→</span></a>
+      </div>
+
+      <div class="p-card">
+        <div class="p-top">
+          <div class="p-num">07</div>
+          <div class="p-ico"><i class="fas fa-building"></i></div>
+        </div>
+        <h3>AI Company Intelligence Agent</h3>
+        <p>Architected an autonomous AI agent pipeline that performs deep-dive company research by orchestrating multiple tool-use steps — web search, data scraping, financial summary extraction, and report generation — using a Python backend powered by a Large Language Model (LLM) with structured prompt chaining. The agent follows a Reason-Act (ReAct) loop: it reasons about what information is missing, selects the appropriate tool (search, fetch, parse), executes it, and feeds the result back into context for the next reasoning step. The Node.js/Express middleware layer handles session state, tool invocation routing, and streaming LLM responses to the frontend via Server-Sent Events (SSE). The React-style JavaScript frontend renders structured company intelligence cards — covering financials, tech stack, hiring trends, and competitive positioning — in real time as the agent completes each research step, providing a transparent agentic workflow visible to the user.</p>
+        <div class="p-tags"><span>Python</span><span>AI Agent</span><span>LLM</span><span>Node.js</span><span>JavaScript</span><span>CSS</span><span>HTML</span><span>REST API</span></div>
+        <a href="https://github.com/venkateshmallarapu2-dot/AI-Company-Intelligence-Agent" target="_blank" rel="noopener" class="p-link"><i class="fab fa-github"></i> View on GitHub <span>→</span></a>
+      </div>
+
+      <div class="p-card">
+        <div class="p-top">
+          <div class="p-num">08</div>
+          <div class="p-ico"><i class="fas fa-comments"></i></div>
+        </div>
+        <h3>AI Interview Assistant</h3>
+        <p>Designed an AI-powered interview preparation platform combining large language models, natural language processing, and speech recognition to simulate technical and behavioural interview rounds. The system uses prompt engineering to generate domain-specific questions dynamically — adjusting difficulty and topic scope based on user-selected job roles and prior performance. Candidate responses are captured via Web Speech API (browser-based speech-to-text) or text input, then processed through an LLM-powered evaluation pipeline that scores clarity, technical correctness, conciseness, and confidence, returning structured feedback with actionable improvement suggestions. The Flask backend maintains a stateful session for multi-turn conversations, tracking question history, cumulative scores, and weak areas to personalise the next question. The frontend visualises progress with a radar chart of competency dimensions (communication, problem-solving, domain expertise) and provides real-time hints and follow-up probes to mimic realistic interviewer behaviour.</p>
+        <div class="p-tags"><span>Python</span><span>NLP</span><span>AI / LLM</span><span>Speech Recognition</span><span>Flask</span><span>JavaScript</span><span>HTML/CSS</span></div>
+        <a href="https://github.com/venkateshmallarapu2-dot/AI-Interview-Assistant" target="_blank" rel="noopener" class="p-link"><i class="fab fa-github"></i> View on GitHub <span>→</span></a>
       </div>
 
     </div>

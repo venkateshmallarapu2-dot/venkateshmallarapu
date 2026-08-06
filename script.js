@@ -252,6 +252,8 @@ const voiceMap = {
   'p-3': 'Project four — Smart Career Counsellor. A machine learning recommendation system trained on fifty thousand synthetic student profiles. It uses Random Forest Classification to map scores in Math, Programming, Creativity, Communication, and Science to the best career path — achieving eighty-five to ninety-five percent accuracy.',
   'p-4': 'Project five — Floods and Landslides Prediction. An SVM-based web application that predicts flood risk from four input features: rainfall in millimetres, river water level, soil moisture percentage, and terrain slope. Trained on twenty thousand records, it includes user authentication, prediction history, and visual analysis charts.',
   'p-5': 'Project six — Credit Card Fraud Detection. A real-time fraud classification system using Random Forest with Standard Scaler preprocessing. The full-stack application features a Flask backend and a JavaScript frontend that provides live fraud alerts for incoming transactions.',
+  'p-6': 'Project seven — AI Company Intelligence Agent. An AI-powered agent built with Python and a JavaScript web interface that researches and analyses companies. It aggregates business intelligence data to surface actionable insights about any organisation.',
+  'p-7': 'Project eight — AI Interview Assistant. An intelligent interview preparation tool that uses AI to generate relevant questions, provide real-time feedback, and offer personalised coaching for both technical and behavioural interview rounds — helping candidates perform at their best.',
 
   // EDUCATION
   'edu-0': 'Bachelor of Technology in Computer Science and Engineering from Holy Mary Institute of Technology and Science, graduating in May 2026 with a score of seventy-five point nine percent.',
@@ -262,7 +264,7 @@ const voiceMap = {
   'exp': 'Work Experience — Data Science Intern at Evoastra Ventures. Venkatesh worked on real-world data science projects involving data analysis and machine learning. He performed data preprocessing, cleaning, and exploratory data analysis to identify patterns and insights. He built and evaluated machine learning models using Random Forest, K-Nearest Neighbors, and other classification techniques — applying Python libraries including NumPy, Pandas, Matplotlib, and Scikit-learn throughout.',
 
   // STATS
-  'stat-0': 'Six or more completed projects, spanning stock market prediction, fraud detection, character recognition, career recommendation, flood prediction, and usage forecasting.',
+  'stat-0': 'Eight or more completed projects, spanning stock market prediction, fraud detection, character recognition, career recommendation, flood prediction, usage forecasting, AI company intelligence, and an AI interview assistant.',
   'stat-1': 'One internship completed — Data Science Intern at Evoastra Ventures, gaining hands-on industry experience with real-world datasets and machine learning pipelines.',
   'stat-2': 'A perfect hundred percent score in SSC — the highest possible achievement in secondary school education.',
   'stat-3': 'Proficient in more than ten technologies including Python, TensorFlow, Scikit-learn, Flask, GitHub Actions, and more.',
