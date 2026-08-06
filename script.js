@@ -15,7 +15,7 @@ document.querySelectorAll('.n-links a').forEach(a =>
    SCROLL REVEAL
 ═══════════════════════════════════════════ */
 const els = document.querySelectorAll(
-  '.sk-card,.p-card,.edu-row,.exp-content,.stat-item,.about-text,.sec-top,.h-eyebrow,.h1,.h-strip,.h-sub,.h-cta,.h-soc,.contact-big'
+  '.sk-card,.p-card,.edu-row,.exp-content,.stat-item,.about-text,.sec-top,.h-eyebrow,.h1,.h-strip,.h-sub,.h-cta,.h-soc,.contact-big,.cert-card'
 );
 els.forEach(el => el.classList.add('appear'));
 const io = new IntersectionObserver(entries => {
@@ -260,6 +260,10 @@ const voiceMap = {
   'edu-1': 'Intermediate education — Mathematics, Physics, Chemistry stream from TMRJC Sathupally, scoring eighty-four point nine percent.',
   'edu-2': 'Secondary School Certificate from Saint Ann\'s High School, Venkatapuram. A perfect score — one hundred percent! An outstanding academic achievement.',
 
+  // CERTIFICATIONS
+  'cert-0': 'Certification from Visualpath Data Science covering Machine Learning, Python, and Artificial Intelligence. Comprehensive training including supervised and unsupervised learning, deep learning fundamentals, and hands-on AI project implementation.',
+  'cert-1': 'Data Science certification from Tutedude. A practical programme covering exploratory data analysis, statistical modelling, feature engineering, data visualisation, and end-to-end ML project workflows.',
+
   // EXPERIENCE
   'exp': 'Work Experience — Data Science Intern at Evoastra Ventures. Venkatesh worked on real-world data science projects involving data analysis and machine learning. He performed data preprocessing, cleaning, and exploratory data analysis to identify patterns and insights. He built and evaluated machine learning models using Random Forest, K-Nearest Neighbors, and other classification techniques — applying Python libraries including NumPy, Pandas, Matplotlib, and Scikit-learn throughout.',
 
@@ -299,8 +303,53 @@ window.addEventListener('load', () => {
     attachVoice('.edu-row', i => `edu-${i}`);
     attachVoice('.exp-content', () => 'exp');
     attachVoice('.stat-item', i => `stat-${i}`);
+    attachVoice('.cert-card', i => `cert-${i}`);
 
     // Greet on load
     speak('Welcome to Venkatesh Mallarapu\'s portfolio. I am a Data Scientist and AI Engineer. Click on any card, project, or section to hear more details.');
   }, 800);
 });
+
+/* ═══════════════════════════════════════════
+   CV MODAL
+═══════════════════════════════════════════ */
+(function () {
+  const modal   = document.getElementById('cv-modal');
+  const openBtn = document.getElementById('cv-view-btn');
+  const closeBtn = document.getElementById('cv-close');
+  const overlay = document.getElementById('cv-overlay');
+  const iframe  = document.getElementById('cv-iframe');
+  if (!modal || !openBtn) return;
+
+  function openModal() {
+    // Lazy-load the PDF only on first open
+    if (!iframe.src || iframe.src === window.location.href) {
+      iframe.src = iframe.dataset.src;
+    }
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    iframe.addEventListener('load', function onLoad() {
+      try {
+        if (iframe.contentDocument && iframe.contentDocument.body &&
+            iframe.contentDocument.body.innerHTML === '') {
+          document.getElementById('cv-fallback').style.display = 'flex';
+        }
+      } catch (e) { /* cross-origin PDF — fine */ }
+      iframe.removeEventListener('load', onLoad);
+    });
+    iframe.addEventListener('error', () => {
+      document.getElementById('cv-fallback').style.display = 'flex';
+    }, { once: true });
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  overlay.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+})();
